@@ -10,9 +10,21 @@
 
 &spi2 {
 	status = "okay";
-
-	spidev@0 {
+	/delete-node/ spidev@0;
+	ili9341: ili9341@0{
+		compatible = "adafruit,yx240qv29", "ilitek,ili9341";
+		reg = <0>;
 		status = "okay";
+		spi-max-frequency = <32000000>;
+		dc-gpios = <&porta 24 GPIO_ACTIVE_HIGH>;
+		reset-gpios = <&porta 23 GPIO_ACTIVE_LOW>;
+		rotate = <90>;
+		spi-cpol;
+		spi-cpha;
+		fps = <30>;
+		bgr;
+		buswidth = <8>;
+		// backlight = <$backlight>;
 	};
 };
 

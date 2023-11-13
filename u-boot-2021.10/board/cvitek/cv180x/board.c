@@ -227,9 +227,8 @@ int board_init(void)
 	// pinmux_config(PINMUX_SDIO1);
 	pinmux_config(PINMUX_USB);
 	//pinmux_config(PINMUX_SPI0);
-	//pinmux_config(PINMUX_SPI2);
+	pinmux_config(PINMUX_SPI2);
 	cvi_board_init();
-
 	return 0;
 }
 
